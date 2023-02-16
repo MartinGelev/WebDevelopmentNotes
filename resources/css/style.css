@@ -1,0 +1,116 @@
+body {
+    display: grid;
+    grid-template-areas: "header header"
+        "navigation content";
+    max-width: 100%;
+}
+
+header {
+    grid-area: header;
+    background-color: #181823;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    height: 10rem;
+}
+
+
+nav {
+    grid-area: navigation;
+    background-color: #537FE7;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 3rem;
+}
+
+nav ul {
+    padding-left: 10px;
+}
+
+nav li {
+    margin: 1rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    grid-area: content;
+    background-color: #E9F8F9;
+}
+
+#content {
+    font-family: 'Roboto', sans-serif;
+    padding: 3rem;
+    margin: 0 auto;
+}
+
+.containerContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#content h2 {
+    text-align: center;
+    background-color: #301E67;
+    color: white;
+    height: 3rem;
+    font-size: 2rem;
+}
+
+#content h3 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#content h4 {
+    font-size: 1.2rem;
+}
+
+.text {
+    width: 40%;
+    padding: 2rem;
+    display: inline-block;
+}
+
+.code {
+    width: 40%;
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: inline-block;
+    overflow: scroll;
+}
+
+#top {
+    font-size: 3rem;
+    position: fixed;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: #301E67;
+    color: white;
+}
+
+ul li ul li ul {
+    display: none;
+}
+
+ul li:hover>ul,
+ul li ul:hover {
+    display: block;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 2px 3rem;
+}

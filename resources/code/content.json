@@ -1,0 +1,49 @@
+[
+    {
+        "title": "Fundamentals of HTML",
+        "content": [
+            {
+                "title": "Elements",
+                "content": [
+                    {
+                        "title": "HTML",
+                        "text": "HTML (HyperText Markup Language) is used to give content to a web page and instructs web browsers on how to structure that content."
+                    },
+                    {
+                        "title": "Element Content",
+                        "text": [
+                            "HTML (HyperText Markup Language) is used to give content to a web page and instructs web browsers on how to structure that content."
+                        ],
+                        "code": [
+                            "<h1>Codecademy is awesome! 🙂</h1>"
+                        ]
+                    },
+                    {
+                        "title": "<li> List Item Element",
+                        "text": [
+                            "The <li> list item element create list items inside:",
+                            [
+                                "Ordered lists <ol>",
+                                "Unordered lists <ul>"
+                            ]
+                        ],
+                        "code": [
+                            "<ol>",
+                            "tab",
+                            "<li>Head east on Prince St</li>",
+                            "tab",
+                            "<li>Turn left on Elizabeth</li>",
+                            "</ol>",
+                            "<ul>",
+                            "tab",
+                            "<li>Cookies</li>",
+                            "tab",
+                            "<li>Milk</li>",
+                            "</ul>"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
