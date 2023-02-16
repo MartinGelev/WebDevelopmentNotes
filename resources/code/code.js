@@ -2476,6 +2476,7 @@ function createNav(parentElement, data) {
         }
     })
     parentElement.appendChild(nav)
+
 }
 
 let counterContent = 1;
