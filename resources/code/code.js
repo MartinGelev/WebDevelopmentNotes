@@ -2980,6 +2980,331 @@ let data = [
                 ]
             }
         ]
+    },
+    {
+        "title": "Git and GitHub, Part 1",
+        "content": [
+            {
+                "title": "Basic Git Workflow",
+                "content": [
+                    {
+                        "title": "Checking the Status of a Git Repository",
+                        "text": [
+                            "The git status command is used within a Git repository to its current status including the current commit, any modified files, and any new files not being tracked by Git.",
+                            "The output of git status can vary widely, and it often includes helpful messages to direct the user to manage their repository. For example, git status will show the user the files they would commit by running git commit and the files they could commit by running git add before running git commit."
+                        ]
+                    },
+                    {
+                        "title": "Initializing a Git Repository",
+                        "text": [
+                            "The git init command creates or initializes a new Git project, or repository. It creates a .git folder with all the tools and data necessary to maintain versions. This command only needs to be used once per project to complete the initial setup. For instance, the code block sets up the home folder as a new git repository."
+                        ],
+                        "code": [
+                            "$ cd /home",
+                            "$ git init"
+                        ]
+                    },
+                    {
+                        "title": "Displaying Differences with Git Diff",
+                        "text": [
+                            "The git diff filename command will display the differences between the working directory and the staging area in one specific file. Use git diff filename before adding new content to ensure that you are making the changes you expect."
+                        ],
+                        "code": [
+                            "$ git diff hello.txt",
+                            "diff --git a/hello.txt b/hello.txt",
+                            "index 557db03..980a0d5 100644",
+                            "--- a/hello.txt",
+                            "+++ b/hello.txt",
+                            "@@ -1 +1 @@",
+                            "-Hello World",
+                            "+Hello World!"
+                        ]
+                    },
+                    {
+                        "title": "Showing Git Commit Logs",
+                        "text": [
+                            "In Git, the git log command shows all of the commit logs for a project. The following is displayed for each commit:",
+                            [
+                                "A 40-character code, called a SHA, that uniquely identifies the commit.",
+                                "The commit author",
+                                "The date and time of the commit",
+                                "The commit message"
+                            ],
+                            "This command is particularly useful when you need to refer back to an old version of your project. The unique SHA code allows you to identify a point in your program’s history that you would like to revert to."
+                        ],
+                        "code": [
+                            "$ git log",
+                            "commit 9d63f80111447544c303e9f1776fa08593a87310",
+                            "Author: codecademy <exampleuser@codecademy.com>",
+                            "Date:   Wed Jan 13 18:55:53 2021 +0000",
+                            "    Added updates to the file",
+                            "commit 3ba6efbeece6ed530d85de5e313e52123fdf8cb4",
+                            "Author: codecademy <exampleuser@codecademy.com>",
+                            "Date:   Wed Jan 6 10:11:13 2021 -0400",
+                            "    Completed first line of dialogue"
+                        ]
+                    },
+                    {
+                        "title": "Committing Your Code",
+                        "text": [
+                            "The git commit -m 'log message here' command creates a new commit containing:",
+                            [
+                                "The current contents of the staging area",
+                                "A log message describing the changes to the repository"
+                            ],
+                            "A commit is the last step in our Git workflow. A commit permanently stores changes from the staging area inside the repository. This command is almost always used in conjunction with the git add command as git add is used to add files to the staging area."
+                        ],
+                        "code": [
+                            "$ git commit -m 'Added About section to README'",
+                            "[master 9d63f80] Added About section to README",
+                            "1 file changed, 10 insertions(+), 1 deletion(-)"
+                        ]
+                    },
+                    {
+                        "title": "Git",
+                        "text": [
+                            "Git is a command line software that keeps track of changes made to a project over time. Git works by recording the changes made to a project, storing those changes, then allowing a programmer to reference them as needed.",
+                            "All Git commands follow the pattern git <action> and, in order to use Git for a project, a project must first be initialized using the git init command in the project’s root directory."
+                        ]
+                    },
+                    {
+                        "title": "Adding Changes to the Staging Area",
+                        "text": [
+                            "The git add filename command is used to add the filename file to the staging area. After your changes have been staged, you can use the git commit command to permanently store your changes.",
+                            [["img"], ["resources\images\git-diff.webp"]]
+                        ]
+                    },
+                    {
+                        "title": "Git Project Workflow",
+                        "text": [
+                            "A Git project has three parts:",
+                            [
+                                "A Working Directory: where files are created, edited, deleted, and organized",
+                                "A Staging Area: where changes that are made to the working directory are listed",
+                                "A Repository: where Git permanently stores changes as different versions of the project"
+                            ],
+                            "The Git workflow consists of editing files in the working directory, adding files to the staging area, and saving changes to a Git repository."
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Important Git Operations",
+                "content": [
+                    {
+                        "title": "Showing Latest Commit Log",
+                        "text": [
+                            "In Git, the commit you are currently on is known as the HEAD commit.",
+                            "The output of the git show HEAD command will display everything the git log command displays for the HEAD commit, plus all the file changes that were committed."
+                        ],
+                        "code": [
+                            "$ git show HEAD",
+                            "commit 735359632f3ca3fe572484a4ec3e0d7b0d9c8f2d",
+                            "Author: codecademy <exampleuser@codecademy.com>",
+                            "Date:   Wed Jul 6 10:20:58 2016 -0400",
+                            "    scene-5.txt",
+                            "diff --git a/scene-5.txt b/scene-5.txt",
+                            "index b12dd97..5dd5d4e 100644",
+                            "--- a/scene-5.txt",
+                            "+++ b/scene-5.txt",
+                            "@@ -12,3 +12,7 @@ Hamlet:",
+                            "I will.",
+                            "+Ghost:",
+                            "+My hour is almost come,",
+                            "+When I to sulphurous and tormenting flames",
+                            "+Must render up myself.",
+                            "\ No newline at end of file"
+                        ]
+                    },
+                    {
+                        "title": "Git Reset Using SHA",
+                        "text": [
+                            "In Git, the git reset commit_SHA command can be used to set HEAD to the commit_SHA commit. The commit_SHA argument is the first seven digits of a previous commit’s SHA. In this example, the HEAD was reset to the commit made on Wed Jan 6.",
+                            "You can use git log to see a record of previous commits and their SHA values."
+                        ],
+                        "code": [
+                            "$ git log",
+                            "commit 9d63f80111447544c303e9f1776fa08593a87310",
+                            "Author: codecademy <exampleuser@codecademy.com>",
+                            "Date:   Wed Jan 13 18:55:53 2021 +0000",
+                            "    Added updates to the file",
+                            "commit 3ba6efbeece6ed530d85de5e313e52123fdf8cb4",
+                            "Author: codecademy <exampleuser@codecademy.com>",
+                            "Date:   Wed Jan 6 10:11:13 2021 -0400",
+                            "    Completed first line of dialogue",
+                            "$ git reset 3ba6efb$ git reset 3ba6efb"
+                        ]
+                    },
+                    {
+                        "title": "Staging Multiple Files",
+                        "text": [
+                            "In Git, the git add filename_1 filename_2 command is used to add multiple files to the staging area at once.",
+                            "You can use git status to check if you properly added your files to the staging area."
+                        ],
+                        "code": [
+                            "$ git add scene - 5.txt scene - 7.txt",
+                            "$ git status",
+                            "On branch master",
+                            "Changes to be committed:",
+                            '  (use ""git reset HEAD <file>..."" to unstage)',
+                            "        modified:   scene-5.txt",
+                            "        modified:   scene-7.txt"
+                        ]
+                    },
+                    {
+                        "title": "Remove File from Staging",
+                        "text": [
+                            "In Git, the git reset HEAD filename command will remove filename from the staging area. Note that this command does not discard file changes from the working directory. You might use this command if you’ve added a file to the staging area, but the file includes incorrect edits.",
+                            "You can use the git status command to make sure your file was properly removed from the staging area."
+                        ],
+                        "code": [
+                            "$ git reset HEAD scene-3.txt",
+                            "Unstaged changes after reset:",
+                            "M       scene-3.txt"
+                        ]
+                    },
+                    {
+                        "title": "Rolling Back to Last Commit",
+                        "text": [
+                            "In Git, the git checkout HEAD filename command rolls back all changes that have been made to filename since the last commit. In other words, this command will change your working directory to look exactly as it did when you last made a commit.",
+                            "You can use the git diff command to see if the rollback was successful. If git diff doesn’t output anything, this means your working directory matches your last commit."
+                        ],
+                        "code": [
+                            "$ git checkout HEAD scene-5.txt",
+                            "$ git diff",
+                            "$"
+                        ]
+                    },
+                    {
+                        "title": "git stash",
+                        "text": [
+                            "git stash allows you to get back to a clean commit point with a synchronized working tree, and avoid losing your local changes in the process of switching branches or tasks.",
+                            "You’re “stashing” your local work temporarily in order to update a previous commit and later on retrieve your work.",
+                            "You can use git stash pop to retrieve from your stash.",
+                            [["img"], ["resources\images\git-stash-pop-diagram.svg"]]
+                        ]
+                    },
+                    {
+                        "title": "git log options",
+                        "text": [
+                            "git log allows you to view the commit history of the branch you currently have checked out.",
+                            "git log --oneline show the list of commits in one line format. `git log -S “keyword” displays a list of commits that contain the keyword in the message.",
+                            "git log --oneline --graph displays a visual representation of how the branches and commits were created in order to help you make sense of your repository history.",
+                            [["img"], ["resources\images\git-log-oneline-graph.png"]]
+                        ]
+                    },
+                    {
+                        "title": "git commit –amend",
+                        "text": [
+                            "git commit --amend flag allows you to update a commit. To avoid creating a new one, you could create your changes, stage them with git add and then type the command git commit --amend to update your previous commit.",
+                            "The terminal editor will ask you to update your commit message.",
+                            [["img"], ["resources\images\git-commit-amend.png"]]
+                        ]
+                    },
+                    {
+                        "title": "Git aliases",
+                        "text": [
+                            "If you have a set of commands that you use regularly and want to save some time from typing them, you can easily set up an alias for each command using Git config.",
+                            "The following terminal command",
+                            'git config --global alias.glop "log --pretty=format:"%h %s" --graph"',
+                            "allows you to reduce the entire command to",
+                            "git glop"
+
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Introduction to GitHub",
+                "content": [
+
+                    {
+                        "title": "The Main Branch",
+                        "text": [
+                            "In Git, the main project is completed on the main branch. Making your first commit in a new git repository will automatically create a main branch. Create new branches from the main branch to develop new features for a project. These branches can be merged into main at a later time to incorporate the new features. You can use git branch to check what branch you’re on."
+                        ],
+                        "code": [
+                            "$ git init",
+                            "Initialized empty Git repository in /home/ccuser/new-project/.git/",
+                            '$ echo "Hello World!" >> hello.txt',
+                            "$ git add hello.txt ",
+                            "$ git commit -m 'initial commit'",
+                            "[master (root-commit) bb0e565] initial commit",
+                            " 1 file changed, 1 insertion(+)",
+                            " create mode 100644 hello.txt",
+                            "$ git branch",
+                            "* master"
+                        ]
+                    },
+                    {
+                        "title": "Committing Your Code",
+                        "text": [
+                            'The git commit -m "log message here" command creates a new commit containing:',
+                            [
+                                "The current contents of the staging area",
+                                "A log message describing the changes to the repository"
+                            ],
+                            "A commit is the last step in our Git workflow. A commit permanently stores changes from the staging area inside the repository. This command is almost always used in conjunction with the git add command as git add is used to add files to the staging area."
+                        ],
+                        "code": [
+                            '$ git commit -m "Added About section to README"',
+                            "[master 9d63f80] Added About section to README",
+                            '1 file changed, 10 insertions(+), 1 deletion(-)'
+                        ]
+                    },
+                    {
+                        "title": "Deleting a Branch",
+                        "text": [
+                            "In Git, the git branch -d branch_name command is used to delete the branch_name branch. It’s good practice to delete a branch after it has been merged into the master branch.",
+                            [["img"], ["resources\images\learn-git-remove-branch.webp"]]
+
+                        ],
+                    },
+                    {
+                        "title": "Pull Requests on GitHub",
+                        "text": [
+                            "A pull request is a feature of GitHub and other source code management tools that allow a repository’s collaborators to review and give feedback on proposed code changes before they are accepted and merged to another branch, usually the main branch. Each pull request creates a discussion forum that can be used by reviewers and authors alike to highlight or add comments to a single line of code or chunk of code, add videos or images, etc.",
+                            "Going through the pull request process can increase group knowledge, improve product quality, and develop professional skills through group critique.",
+                            [["img"], ["resources\images\branch-comparison.webp"]]
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "GitHub and Markdown",
+                "content": [
+                    {
+                        "title": "A GitHub README File",
+                        "text": [
+                            "Adding a README file to your GitHub repository is the best way to introduce your project to others. Since it is usually the first thing others see on your repository, it is the best place to explain what your project does, why it’s useful, and how they can get started with it.",
+                            [["img"], ["resources\images\github-README.svg"]]
+                        ]
+                    },
+                    {
+                        "title": "Writing a Good README file",
+                        "text": [
+                            "A good README file in GitHub, at minimum, contains the following elements:",
+                            [
+                                "Title",
+                                "Description",
+                                "Features",
+                                "How to use",
+                                "Technologies",
+                                "Collaborators",
+                                "License"
+                            ],
+                            "You can further level up your README file with markdown:",
+                            [
+                                "Use headers and HTML to format your README and make it easier to read.",
+                                "The headers automatically generate a table of contents on GitHub!",
+                                "Use media, such as images and videos, to make your project look more appealing."
+                            ],
+                            [["img"], ["resources\images\table-of-contents.webp"]]
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 
 ]
