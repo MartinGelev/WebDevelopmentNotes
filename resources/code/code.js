@@ -180,7 +180,8 @@ let data = [
                             "HTML attributes are values added to the opening tag of an element to configure the element or change the element’s default behavior. In the provided example, we are giving the <p> (paragraph) element a unique identifier using the id attribute and changing the color of the default text using the style attribute."
                         ],
                         "code": [
-                            "<p id='my - paragraph' style='color: green;'>Here’s some text for a paragraph that is being altered by HTML attributes</p>"
+                            "<p id='my-paragraph' style='color:green;'>Here’s some text for a ",
+                            "paragraph that is being altered by HTML attributes</p>"
                         ]
                     },
                     {
@@ -294,7 +295,8 @@ let data = [
                             "The target attribute on an <a> anchor element specifies where a hyperlink should be opened. A target value of '_blank' will tell the browser to open the hyperlink in a new tab in modern browsers, or in a new window in older browsers or if the browser has had settings changed to open hyperlinks in a new window."
                         ],
                         "code": [
-                            "<a href='https://www.google.com' target='_blank'>This anchor element links to google and will open in a new tab or window.</a>"
+                            "<a href='https://www.google.com' target='_blank'>This anchor element links ",
+                            "to google and will open in a new tab or window.</a > "
                         ]
                     },
                     {
@@ -359,8 +361,10 @@ let data = [
                         ],
                         "code": [
                             "<p>Test paragraph</p>",
-                            "<!-- The whitespace created by this line, and above/below this line is ignored by the browser-->",
-                            "<p>Another test paragraph, this will sit right under the first paragraph, no extra space between.</p>"
+                            "<!-- The whitespace created by this line, and ",
+                            "above / below this line is ignored by the browser-- > ",
+                            "<p>Another test paragraph, this will sit right under the ",
+                            "first paragraph, no extra space between.</p > "
                         ]
                     },
                     {
@@ -383,7 +387,8 @@ let data = [
                             "URL paths in HTML can be absolute paths, like a full URL, for example: https://developer.mozilla.org/en-US/docs/Learn or a relative file path that links to a local file in the same folder or on the same server, for example: ./style.css. Relative file paths begin with ./ followed by a path to the local file. ./ tells the browser to look for the file path from the current folder."
                         ],
                         "code": [
-                            "<a href='https://developer.mozilla.org/en-US/docs/Web'>The URL for this anchor element is an absolute file path.</a>",
+                            "<a href='https://developer.mozilla.org/en-US/docs/Web'>The URL for ",
+                            "this anchor element is an absolute file path.</a > ",
                             "<a href='./ about.html'>The URL for this anchor element is a relative file path.</a>"
                         ]
                     },
@@ -1056,7 +1061,8 @@ let data = [
                             "The CSS min-width and min-height properties can be used to set a minimum width and minimum height of an element’s box. CSS max-width and max-height properties can be used to set maximum widths and heights for element boxes."
                         ],
                         "code": [
-                            "/* Any element with class 'column' will be at most 200 pixels wide, despite the width property value of 500 pixels. */",
+                            "/* Any element with class 'column' will be at most 200 pixels ",
+                            "wide, despite the width property value of 500 pixels. * /",
                             ".column {",
                             "  max-width: 200px;",
                             "  width: 500px;",
@@ -1193,27 +1199,32 @@ let data = [
                             "The CSS clear property specifies how an element should behave when it bumps into another element within the same containing element.The clear is usually used in combination with elements having the CSS float property. This determines on which sides floating elements are allowed to float."
                         ],
                         "code": [
-                            "/*This determines that no other elements within the same containing element are allowed to float on the left side of this element.*/",
+                            "/*This determines that no other elements within the same containing ",
+                            "element are allowed to float on the left side of this element.* /",
                             ".element {",
                             "  clear: left;",
                             "}",
-                            "/*This determines that no other elements within the same containing element are allowed to float on the right side of this element.*/",
+                            "/*This determines that no other elements within the same containing ",
+                            "element are allowed to float on the right side of this element.* /",
                             ".element {",
                             "  clear: right;",
                             "}",
-                            "/*This determines that no elements within the same containing element are allowed to float on either side of this element.*//*This determines that no elements within the same containing element are allowed to float on either side of this element.*/",
+                            "/*This determines that no elements within the same containing ",
+                            "element are allowed to float on either side of this element.*/",
+                            "/*This determines that no elements within the same containing element are allowed ",
+                            "to float on either side of this element.* /",
                             ".element {",
                             "  clear: both;",
                             "}",
-                            "/*This determines that other elements within the same containing element are allowed to float on both side of this element.*/",
+                            "/*This determines that other elements within the same containing element ",
+                            "are allowed to float on both side of this element.* /",
                             ".element {",
                             "  clear: none;",
                             "}",
                         ]
-                    },
+                    }
                 ]
             }
-
         ]
     },
     {
@@ -3557,28 +3568,413 @@ let data = [
                         ]
                     }
                 ]
+            },
+            {
+                "title": "DOM Events with JavaScript",
+                "content": [
+                    {
+                        "title": ".addEventListener()",
+                        "text": [
+                            "The .addEventListener() method attaches an event handler to a specific event on an event target. The advantage of this is that you can add many events to the event target without overwriting existing events. Two arguments are passed to this method: an event name as a string, and the event handler function. Here is the syntax:"
+                        ],
+                        "code": [
+                            "eventTarget.addEventListener('event', eventHandlerFunction);"
+                        ]
+                    },
+                    {
+                        "title": ".removeEventListener()",
+                        "text": [
+                            "We can tell our code to listen for an event to fire using the .addEventListener() method. To tell the code to stop listening for that event to fire, we can use the .removeEventListener() method. This method takes the same two arguments that were passed to .addEventListener(), the event name as a string and the event handler function. See their similarities in syntax:"
+                        ],
+                        "code": [
+                            "eventTarget.addEventListener('event', eventHandlerFunction);",
+                            "eventTarget.removeEventListener('event', eventHandlerFunction);"
+                        ]
+                    },
+                    {
+                        "title": "Event handler",
+                        "text": [
+                            "When an event fires in JavaScript (such as a keystroke or mouse movement), an event handler runs in response. Each event handler is registered to an element, connecting the handler to both an element and a type of event (keystroke, eg.). A method called an event listener “listens” for an event to occur, specifies what should happen as a response, and calls the event handler."
+                        ]
+                    },
+                    {
+                        "title": "Event object",
+                        "text": [
+                            "Event handler functions are passed an argument called an event object, which holds information about the event that was fired.",
+                            "Event objects store information about the event target, the event type, and associated listeners in properties and methods. For example, if we wanted to know which key was pressed, the event object would store that information."
+                        ]
+                    },
+                    {
+                        "title": "Keyboard events",
+                        "text": [
+                            "Keyboard events describe a user interaction with the keyboard. Each event describes a separate interaction with a key on the keyboard by the user, which are then stored with the .key property.",
+                            [
+                                "keydown events are fired when the key is first pressed.",
+                                "keyup events are fired when the key is released.",
+                                "keypress events are fired when the user presses a key that produces a character value (aka is not a modifier key such as CapsLock)."
+                            ]
+                        ]
+                    },
+                    {
+                        "title": "Keyboard events",
+                        "text": [
+                            "Keyboard events describe a user interaction with the keyboard. Each event describes a separate interaction with a key on the keyboard by the user, which are then stored with the .key property.",
+                            [
+                                "keydown events are fired when the key is first pressed.",
+                                "keyup events are fired when the key is released.",
+                                "keypress events are fired when the user presses a key that produces a character value (aka is not a modifier key such as CapsLock)."
+                            ]
+                        ]
+                    },
+                    {
+                        "title": "javascript event",
+                        "text": [
+                            "On a webpage, a trigger such as a user interaction or browser manipulation can cause a client-side JavaScript event to be created. Events can be used to manipulate the DOM by executing a JavaScript function.",
+                            "Events can include anything from a click to hovering a mouse over an element to a webpage loading or being refreshed. Events are defined as a part of the JavaScript API built into the web browser."
+                        ],
+                        "code": [
+                            "// An event is triggered when a user clicks on the #button element,",
+                            "// which then sets the #button element's background-color to blue. ",
+                            "$('#button').on('click', event => {",
+                            "  $(event.currentTarget).css('background-color', 'blue');  ",
+                            "});"
+                        ]
+                    },
+                    {
+                        "title": "JS Event Handlers",
+                        "text": [
+                            "The goal of JavaScript is to make a page dynamic, which frequently means responding to certain events (for example, button clicks, user scrolls, etc). DOM elements can have functions hook onto events. The functions are called event handlers and the DOM element is known as an event target.The goal of JavaScript is to make a page dynamic, which frequently means responding to certain events (for example, button clicks, user scrolls, etc). DOM elements can have functions hook onto events. The functions are called event handlers and the DOM element is known as an event target.",
+                            "The example code block shows how to register a function as an event handler. The property name for event handlers starts with ‘on’ with the event appended afterwards. Examples: onload, onclick, onfocus, onscroll."
+                        ],
+                        "code": [
+                            "//Assuming there is an element with ID='test' on the page",
+                            "document.getElementById('test').onclick = function(e) {",
+                            "  alert('Element clicked!');",
+                            "};"
+                        ]
+                    },
+                    {
+                        "title": "Mouse events",
+                        "text": [
+                            "A mouse event fires when a user interacts with the mouse, either by clicking or moving the mouse device.",
+                            [
+                                "click events are fired when the user presses and releases a mouse button on an element.",
+                                "mouseout events are fired when the mouse leaves an element.",
+                                "mouseover events are fired when the mouse enters an element’s content.",
+                                "mousedown events are fired when the user presses a mouse button.",
+                                "mouseup events are fired when the user releases the mouse button."
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "HTML Forms",
+                "content": [
+                    {
+                        "title": "<input>: Checkbox Type",
+                        "text": [
+                            "When using an HTML input element, the type='checkbox' attribute will render a single checkbox item. To create a group of checkboxes related to the same topic, they should all use the same name attribute. Since it’s a checkbox, multiple checkboxes can be selected for the same topic."
+                        ],
+                        "code": [
+                            "<input type='checkbox' name='breakfast' value='bacon'>Bacon 🥓<br>",
+                            "<input type='checkbox' name='breakfast' value='eggs'>Eggs 🍳<br>",
+                            "<input type='checkbox' name='breakfast' value='pancakes'>Pancakes 🥞<br>"
+                        ]
+                    },
+                    {
+                        "title": "<textarea> Element",
+                        "text": [
+                            "The textarea element is used when creating a text-box for multi-line input (e.g. a comment section). The element supports the rows and cols attributes which determine the height and width, respectively, of the element.",
+                            "When rendered by the browser, textarea fields can be stretched/shrunk in size by the user, but the rows and cols attributes determine the initial size.",
+                            "Unlike the input element, the <textarea> element has both opening and closing tags. The value of the element is the content in between these tags (much like a <p> element). The code block shows a <textarea> of size 10x30 and with a name of 'comment'."
+                        ],
+                        "code": [
+                            '<textarea rows="10" cols="30" name="comment"></textarea>'
+                        ]
+                    },
+                    {
+                        "title": "<form> Element",
+                        "text": [
+                            "The HTML <form> element is used to collect and send information to an external source.",
+                            "<form> can contain various input elements. When a user submits the form, information in these input elements is passed to the source which is named in the action attribute of the form."
+                        ],
+                        "code": [
+                            '<form method="post" action="http://server1">',
+                            '  Enter your name:',
+                            '  <input type="text" name="fname">',
+                            '  <br/>',
+                            '  Enter your age:',
+                            '  <input type="text" name="age">',
+                            '  <br/>',
+                            '  <input type="submit" value="Submit">',
+                            '</form>'
+                        ]
+                    },
+                    {
+                        "title": "<input>: Number Type",
+                        "text": [
+                            "HTML input elements can be of type number. These input fields allow the user to enter only numbers and a few special characters inside the field.",
+                            "The example code block shows an input with a type of number and a name of balance. When the input field is a part of a form, the form will receive a key-value pair with the format: name: value after form submission.The example code block shows an input with a type of number and a name of balance. When the input field is a part of a form, the form will receive a key-value pair with the format: name: value after form submission."
+                        ],
+                        "code": [
+                            '<input type="number" name="balance" /> '
+                        ]
+                    },
+                    {
+                        "title": "<input> Element",
+                        "text": [
+                            "The HTML <input> element is used to render a variety of input fields on a webpage including text fields, checkboxes, buttons, etc. <input> element have a type attribute that determines how it gets rendered to a page.",
+                            "The example code block will create a text input field and a checkbox input field on a webpage."
+                        ],
+                        "code": [
+                            '<label for="fname">First name:</label>',
+                            '<input type="text" name="fname" id="fname"><br>',
+                            '<input type="checkbox" name="vehicle" value="Bike"> I own a bike<input type="checkbox" name="vehicle" value="Bike"> I own a bike'
+                        ]
+                    },
+                    {
+                        "title": "<input>: Range Type",
+                        "text": [
+                            "A slider can be created by using the type='range' attribute on an HTML input element. The range slider will act as a selector between a minimum and a maximum value. These values are set using the min and max attributes respectively. The slider can be adjusted to move in different steps or increments using the step attribute.",
+                            "The range slider is meant to act more as a visual widget to adjust between 2 values, where the relative position is important, but the precise value is not as important. An example of this can be adjusting the volume level of an application."
+                        ],
+                        "code": [
+                            '<input type="range" name="movie-rating" min="0" max="10" step="0.1">'
+                        ]
+                    },
+                    {
+                        "title": "<select> Element",
+                        "text": [
+                            "The HTML <select> element can be used to create a dropdown list. A list of choices for the dropdown list can be created using one or more <option> elements. By default, only one <option> can be selected at a time.",
+                            "The value of the selected <select>’s name and the <option>’ s value attribute are sent as a key-value pair when the form is submitted."
+                        ],
+                        "code": [
+                            '<select name="rental-option">',
+                            '  <option value="small">Small</option>',
+                            '  <option value="family">Family Sedan</option>',
+                            '  <option value="lux">Luxury</option>',
+                            '</select>'
+                        ]
+                    },
+                    {
+                        "title": "Submitting a Form",
+                        "text": [
+                            "Once we have collected information in a form we can send that information somewhere else by using the action and method attribute. The action attribute tells the form to send the information. A URL is assigned that determines the recipient of the information. The method attribute tells the form what to do with that information once it’s sent. An HTTP verb is assigned to the method attribute that determines the action to be performed."
+                        ],
+                        "code": [
+                            '<form action="/index3.html" method="PUT"></form>'
+                        ]
+                    },
+                    {
+                        "title": "<input>: Text Type",
+                        "text": [
+                            "HTML <input> elements can support text input by setting the attribute type='text'. This renders a single row input field that users can type text inside.",
+                            "The value of the <input>‘s name and value attribute of the element are sent as a key-value pair when the form is submitted."
+                        ],
+                        "code": [
+                            '<input type="text" name="username">'
+                        ]
+                    },
+                    {
+                        "title": "<datalist> Element",
+                        "text": [
+                            "When using an HTML input, a basic search/autocomplete functionality can be achieved by pairing an <input> with a <datalist>. To pair a <input> with a <datalist> the <input>’s list value must match the value of the id of the <datalist>. The datalist element is used to store a list of <option>s.",
+                            "The list of data is shown as a dropdown on an input field when a user clicks on the input field. As the user starts typing, the list will be updated to show elements that best match what has been typed into the input field. The actual list items are specified as multiple option elements nested inside the datalist.",
+                            "datalists are ideal when providing users a list of pre-defined options, but to also allow them to write alternative inputs as well."
+                        ],
+                        "code": [
+                            '<input list="ide">',
+                            '<datalist id="ide">',
+                            '  <option value="Visual Studio Code" />',
+                            '  <option value="Atom" />',
+                            '  <option value="Sublime Text" />',
+                            '</datalist>'
+                        ]
+                    },
+                    {
+                        "title": "<input>: Radio Button Type",
+                        "text": [
+                            "HTML <input> elements can be given a type='radio' attribute that renders a single radio button. Multiple radio buttons of a related topic are given the same name attribute value. Only a single option can be chosen from a group of radio buttons.",
+                            "The value of the selected/checked <input>’s name and value attribute of this element are sent as a key-value pair when the form is submitted."
+                        ],
+                        "code": [
+                            '<input name="delivery_option" type="radio" value="pickup" />',
+                            '<input name="delivery_option" type="radio" value="delivery" />'
+                        ]
+                    },
+                    {
+                        "title": "Submittable Input",
+                        "text": [
+                            "HTML <input> elements can have a type attribute set to submit, by adding type='submit'. With this attribute included, a submit button will be rendered and, by default, will submit the <form> and execute its action.",
+                            "The text of a submit button is set to Submit by default but can also be changed by modifying the value attribute."
+                        ]
+                    },
+                    {
+                        "title": "<input> name Attribute",
+                        "text": [
+                            "In order for a form to send data, it needs to be able to put it into key-value pairs. This is achieved by setting the name attribute of the input element. The name will become the key and the value of the input will become the value the form submits corresponding to the key.",
+                            "It’s important to remember that the name is not the same as the ID in terms of form submission. The ID and the name of the input may be the same, but the value will only be submitted if the name attribute is specified.",
+                            "In the code example, the first input will be submitted by the form, but the second one will not."
+                        ],
+                        "code": [
+                            '<input name="username" id="username" />',
+                            '<input id="address" />'
+                        ]
+                    },
+                    {
+                        "title": "<label> Element",
+                        "text": [
+                            "The HTML <label> element provides identification for a specific <input> based on matching values of the <input>‘s id attribute and the <label>‘s for attribute. By default, clicking on the <label> will focus the field of the related <input>.",
+                            "The example code will create a text input field with the label text “Password: “ next to it. Clicking on “Password: “ on the page will focus the field for the related <input>."
+                        ],
+
+                        "code": [
+                            '<label for="password ">Password:</label>',
+                            '<input type="text" id="password" name="password">'
+                        ]
+                    },
+                    {
+                        "title": "<input> Password Type",
+                        "text": [
+                            "The HTML <input> element can have the attribute type='password' that renders a single row input field which allows the user to type censored text inside the field. It is used to type in sensitive information.",
+                            "The value of this <input>’s name and value (actual value and not the censored version) attribute of this element are sent as a key-value pair when the form is submitted.",
+                            "The code block shows an example of the fields for a basic login form - the username and password fields."
+                        ],
+                        "code": [
+                            '<input type="text" name="username" />',
+                            '<input type="password" name="password" />'
+                        ]
+                    },
+                    {
+                        "title": "required Attribute",
+                        "text": [
+                            "In HTML, input fields have an attribute called required which specifies that the field must include a value.",
+                            "The example code block shows an input field that is required. The attribute can be written as required='true' or simply required."
+                        ],
+                        "code": [
+                            '<input type="password" name="password" required >'
+                        ]
+                    },
+                    {
+                        "title": "max Attribute",
+                        "text": [
+                            "HTML <input>s of type number have an attribute called max that specifies the maximum value for the input field.",
+                            "The code block shows an input number field that is set to have a maximum value of 20. Any value larger than 20 will mark the input field as having an error."
+                        ],
+
+                        "code": [
+                            '<input type="number" max="20">'
+                        ]
+                    },
+                    {
+                        "title": "maxlength Attribute",
+                        "text": [
+                            "In HTML, input fields with type text have an attribute called maxlength that specifies the maximum number of characters that can be entered into the field. The code block shows an input text field that accepts text that has a maximum length of 140 characters."
+                        ],
+                        "code": [
+                            '<input type="text" name="tweet" maxlength="140">'
+                        ]
+                    },
+                    {
+                        "title": "pattern Attribute",
+                        "text": [
+                            "In a text input element, the pattern attribute uses a regular expression to match against (or validate) the value of the <input>, when the form is submitted."
+                        ],
+                        "code": [
+                            '<form action="/action_page.php">',
+                            '  Country code: ',
+                            '  <input type="text" name="country_code"',
+                            '         pattern="[A-Za-z]{3}"',
+                            '         title="Three letter country code">',
+                            '  <input type="submit">',
+                            '</form>'
+                        ]
+                    },
+                    {
+                        "title": "minlength Attribute",
+                        "text": [
+                            "In HTML, an input field of type text has an attribute that supports minimum length validation. To check that the input text has a minimum length, add the minlength attribute with the character count.",
+                            "The example code block shows an example of a text field that has a minimum length of 6."
+                        ],
+                        "code": [
+                            '<input type="text" name="username" minlength="6" />'
+                        ]
+                    },
+                    {
+                        "title": "HTML Form Validators",
+                        "text": [
+                            "HTML forms allow you to specify different kinds of validation for your input fields to make sure that data is entered correctly before being submitted. HTML supports a number of different validators, including things like minimum value, minimum/maximum length, etc. The validators are specified as attributes on the input field."
+                        ]
+                    },
+                    {
+                        "title": "min Attribute",
+                        "text": [
+                            "In HTML, input fields with type number have an attribute called min that specifies the minimum value that can be entered into the field. The code block provided shows an input number field that accepts a number with minimum value 1."
+                        ],
+                        "code": [
+                            '<input type="number" name="rating" min="1" max="10">'
+                        ]
+                    }
+                ]
             }
         ]
     }
-
 ]
-
 let counterLink = 1
-function createNav(parentElement, data) {
-    let nav = document.createElement("ul");
+function createNav(parentElement, data, level) {
+    let nav;
+    if (level !== 0) {
+        nav = document.createElement("ul");
+    }
+    else {
+        nav = parentElement
+    }
     data.forEach(item => {
-        let listitem = document.createElement("li")
-        let linkItem = document.createElement("a")
-        linkItem.innerHTML = createSpecialCharacters(item["title"])
-        linkItem.setAttribute("href", "#" + counterLink);
+        let listitem
         counterLink++
-        listitem.appendChild(linkItem)
+        if (level !== 0) {
+
+            listitem = document.createElement("li")
+            let linkItem = document.createElement("a")
+            linkItem.innerHTML = createSpecialCharacters(item["title"])
+            linkItem.setAttribute("href", "#" + counterLink);
+            listitem.appendChild(linkItem)
+        }
+        else {
+            listitem = document.createElement("h3")
+            listitem.innerHTML = createSpecialCharacters(item["title"])
+        }
+        listitem.setAttribute("class", "level-" + level)
+
+
         nav.appendChild(listitem)
         if (item["content"]) {
-            createNav(listitem, item["content"])
+            let nextLevel;
+            let sendElement;
+            switch (level) {
+                case 0:
+                    nextLevel = 1
+                    sendElement = parentElement
+                    break;
+                case 1:
+                    nextLevel = 2
+                    sendElement = listitem
+                    break;
+            }
+            createNav(sendElement, item["content"], nextLevel)
         }
     })
-    parentElement.appendChild(nav)
+
+    if (level !== 0) {
+        try {
+            parentElement.appendChild(nav)
+        }
+        catch {
+            console.log(level)
+        }
+
+    }
 
 }
 
@@ -3618,7 +4014,6 @@ function createContent(parentElement, data, level) {
 
                             for (let x = 0; x < rowList.length; x++) {
                                 let data = document.createElement("td")
-                                console.log(rowList[x])
                                 data.innerHTML = rowList[x]
                                 row.appendChild(data)
                             }
@@ -3685,5 +4080,5 @@ function createSpecialCharacters(string) {
     return stringMod
 }
 
-createNav(document.getElementById("navigation"), data)
+createNav(document.getElementById("navigation"), data, 0)
 createContent(document.getElementById("content"), data, 2)
