@@ -3082,7 +3082,7 @@ let data = [
                         "title": "Adding Changes to the Staging Area",
                         "text": [
                             "The git add filename command is used to add the filename file to the staging area. After your changes have been staged, you can use the git commit command to permanently store your changes.",
-                            [["img"], ["resources\images\git-diff.webp"]]
+                            [["img"], ["../resources/images/git-diff.webp"]]
                         ]
                     },
                     {
@@ -3192,7 +3192,7 @@ let data = [
                             "git stash allows you to get back to a clean commit point with a synchronized working tree, and avoid losing your local changes in the process of switching branches or tasks.",
                             "You’re “stashing” your local work temporarily in order to update a previous commit and later on retrieve your work.",
                             "You can use git stash pop to retrieve from your stash.",
-                            [["img"], ["resources\images\git-stash-pop-diagram.svg"]]
+                            [["img"], ["../resources/images/git-stash-pop-diagram.svg"]]
                         ]
                     },
                     {
@@ -3201,7 +3201,7 @@ let data = [
                             "git log allows you to view the commit history of the branch you currently have checked out.",
                             "git log --oneline show the list of commits in one line format. `git log -S “keyword” displays a list of commits that contain the keyword in the message.",
                             "git log --oneline --graph displays a visual representation of how the branches and commits were created in order to help you make sense of your repository history.",
-                            [["img"], ["resources\images\git-log-oneline-graph.png"]]
+                            [["img"], ["../resources/images/git-log-oneline-graph.png"]]
                         ]
                     },
                     {
@@ -3209,7 +3209,7 @@ let data = [
                         "text": [
                             "git commit --amend flag allows you to update a commit. To avoid creating a new one, you could create your changes, stage them with git add and then type the command git commit --amend to update your previous commit.",
                             "The terminal editor will ask you to update your commit message.",
-                            [["img"], ["resources\images\git-commit-amend.png"]]
+                            [["img"], ["../resources/images/git-commit-amend.png"]]
                         ]
                     },
                     {
@@ -3267,7 +3267,7 @@ let data = [
                         "title": "Deleting a Branch",
                         "text": [
                             "In Git, the git branch -d branch_name command is used to delete the branch_name branch. It’s good practice to delete a branch after it has been merged into the master branch.",
-                            [["img"], ["resources\images\learn-git-remove-branch.webp"]]
+                            [["img"], ["../resources/images/learn-git-remove-branch.webp"]]
 
                         ],
                     },
@@ -3276,7 +3276,7 @@ let data = [
                         "text": [
                             "A pull request is a feature of GitHub and other source code management tools that allow a repository’s collaborators to review and give feedback on proposed code changes before they are accepted and merged to another branch, usually the main branch. Each pull request creates a discussion forum that can be used by reviewers and authors alike to highlight or add comments to a single line of code or chunk of code, add videos or images, etc.",
                             "Going through the pull request process can increase group knowledge, improve product quality, and develop professional skills through group critique.",
-                            [["img"], ["resources\images\branch-comparison.webp"]]
+                            [["img"], ["../resources/images/branch-comparison.webp"]]
                         ]
                     }
                 ]
@@ -3288,7 +3288,7 @@ let data = [
                         "title": "A GitHub README File",
                         "text": [
                             "Adding a README file to your GitHub repository is the best way to introduce your project to others. Since it is usually the first thing others see on your repository, it is the best place to explain what your project does, why it’s useful, and how they can get started with it.",
-                            [["img"], ["resources\images\github-README.svg"]]
+                            [["img"], ["../resources/images/../resources/images/github-README.svg"]]
                         ]
                     },
                     {
@@ -3310,7 +3310,7 @@ let data = [
                                 "The headers automatically generate a table of contents on GitHub!",
                                 "Use media, such as images and videos, to make your project look more appealing."
                             ],
-                            [["img"], ["resources\images\table-of-contents.webp"]]
+                            [["img"], ["../resources/images/table-of-contents.webp"]]
                         ]
                     }
                 ]
@@ -3390,7 +3390,7 @@ let data = [
                         "title": "Nodes in DOM tree",
                         "text": [
                             "A node in the DOM tree is the intersection of two branches containing data. Nodes can represent HTML elements, text, attributes, etc. The root node is the top-most node of the tree. The illustration shows a representation of a DOM containing different types of nodes.",
-                            [["img"], ["resources\images\dom-nodes.webp"]]
+                            [["img"], ["../resources/images/dom-nodes.webp"]]
                         ]
                     },
                     {
@@ -4031,6 +4031,25 @@ let data = [
                             "  publishDate: 1975",
                             "});"
                         ]
+                    },
+                    {
+                        "title": "Introduction to Design Patterns",
+                        "text": [
+                            [["link"], ["https://www.patterns.dev/posts/introduction/"]]
+                        ]
+                    },
+                    {
+                        "title": "Understanding Prototypes and Inheritance in JavaScript",
+                        "text": [
+                            [["link"], ["https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain"]],
+                            [["link"], ["https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript"]]
+                        ]
+                    },
+                    {
+                        "title": "Understanding Classes in JavaScript",
+                        "text": [
+                            [["link"], ["https://www.taniarascia.com/understanding-classes-in-javascript/"]]
+                        ]
                     }
                 ]
             },
@@ -4086,6 +4105,170 @@ let data = [
                             "}",
                             "// Program continues running after the error is handled and prints 'Prints after error'",
                             "console.log('Prints after error'); // Program continues running after the error is handled and prints 'Prints after error'"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Module implementation",
+                "content": [
+                    {
+                        "title": "Module implementation",
+                        "text": [
+                            "Before we dive in, it should be noted that there are multiple ways of implementing modules depending on the runtime environment in which your code is executed. In JavaScript, there are two runtime environments and each has a preferred module implementation:Before we dive in, it should be noted that there are multiple ways of implementing modules depending on the runtime environment in which your code is executed. In JavaScript, there are two runtime environments and each has a preferred module implementation:",
+                            [
+                                "The Node runtime environment and the module.exports and require() syntax.",
+                                "The browser’s runtime environment and the ES6 import/export syntax."
+                            ]
+                        ]
+                    },
+                    {
+                        "title": "ES6 Named Export Syntax",
+                        "text": [
+                            "the functions you wish to reuse can be exported using the named export syntax, Using this syntax, the name of each exported resource is listed between curly braces and separated by commas. Below, you can see how this is implemented in the new module file dom-functions.js:"
+                        ],
+                        "code": [
+                            "/* dom-functions.js */",
+                            "const toggleHiddenElement = (domElement) => {",
+                            "    if (domElement.style.display === 'none') {",
+                            "      domElement.style.display = 'block';",
+                            "    } else {",
+                            "      domElement.style.display = 'none';      domElement.style.display = 'none';",
+                            "    }",
+                            "}",
+                            "const changeToFunkyColor = (domElement) => {",
+                            "  const r = Math.random() * 255;",
+                            "  const g = Math.random() * 255;",
+                            "  const b = Math.random() * 255;",
+                            "  domElement.style.background = `rgb(${r}, ${g}, ${b})`;",
+                            "}",
+                            "export { toggleHiddenElement, changeToFunkyColor };"
+                        ]
+                    },
+                    {
+                        "title": "ES6 Import Syntax",
+                        "text": [
+                            "In addition to the syntax above, in which all named exports are listed together, individual values may be exported as named exports by simply placing the export keyword in front of the variable’s declaration. Here is the same example using this syntax:"
+                        ],
+                        "code": [
+                            "/* dom-functions.js */",
+                            "export const toggleHiddenElement = (domElement) => {",
+                            "  // logic omitted..",
+                            "}",
+                            "export const changeToFunkyColor = (domElement) => {",
+                            "  // logic omitted...",
+                            "}"
+                        ]
+                    },
+                    {
+                        "title": "ES6 Import Syntax",
+                        "text": [
+                            "The ES6 syntax for importing named resources from modules is similar to the export syntax. So the code for importing the modules would look like:"
+                        ],
+                        "code": [
+                            "/* secret-messages.js */",
+                            "import { toggleHiddenElement, changeToFunkyColor } from '../modules/dom-functions.js';",
+                            "const buttonElement = document.getElementById('secret-button');",
+                            "const pElement = document.getElementById('secret-p');",
+                            "buttonElement.addEventListener('click', () => {",
+                            "  toggleHiddenElement(pElement);",
+                            "  changeToFunkyColor(buttonElement);",
+                            "});"
+                        ]
+                    },
+                    {
+                        "title": "update html code",
+                        "text": [
+                            "Now, you must also update secret-messages.html. The change here is subtle, the only thing that changes is the addition of the attribute type='module' to the <script> element. Failure to do so can cause some browsers to throw an error. For example, in Chrome you might see this error:",
+                            [["img"], ["../resources/images/es6-modules-chrome-error.webp"]]
+                        ],
+                        "code": [
+                            "<!-- secret-messages.html -->",
+                            "<html>",
+                            "  <head>",
+                            "    <title>Secret Messages</title>",
+                            "  </head>",
+                            "  <body>",
+                            '    <button id="secret-button"> Press me... if you dare </button>',
+                            '    <p id="secret-p" style="display: none"> Modules are fancy! </p>',
+                            '    <script type="module" src="./secret-messages.js"> </script>',
+                            "  </body>",
+                            "</html>"
+                        ]
+                    },
+                    {
+                        "title": "renaming imports to avoid naming collisions",
+                        "text": [
+                            "Inevitably, you will run into a situation where the resources you wish to import share a name with some other value that already exists in your program (or from another imported module). ES6 includes syntax for renaming imported resources by adding in the keyword as. It looks like this:"
+                        ],
+                        "code": [
+                            "/* main.js */",
+                            "import { greet as greetEspanol } from 'greeterEspanol.js';",
+                            "import { greet as greetFrancais } from 'greeterFrancais.js';",
+                            "greetEspanol(); // Prints: hola",
+                            "greetFrancais(); // Prints: bonjour"
+                        ]
+                    },
+                    {
+                        "title": "Default Exports",
+                        "text": [
+                            "So far, the examples shown have used the named export syntax, in which a module’s resources are exported individually by name. Every module also has the option to export a single value to represent the entire module called the default export. Often, though not always, the default export value is an object containing the entire set of functions and/or data values of a module.",
+                            "With this syntax, the object containing the module’s resources is first declared and then is exported on the next line. At first glance, it looks like the resources object is being exported as a named export. However, the clause as default renames the exported object to default, a reserved identifier that can only be given to a single exported value."
+                        ],
+                        "code": [
+                            "/* dom-functions.js */",
+                            "const toggleHiddenElement = (domElement) => {",
+                            "    if (domElement.style.display === 'none') {",
+                            "      domElement.style.display = 'block';",
+                            "    } else {",
+                            "      domElement.style.display = 'none';",
+                            "    }",
+                            "}",
+                            "const changeToFunkyColor = (domElement) => {",
+                            "  const r = Math.random() * 255;",
+                            "  const g = Math.random() * 255;",
+                            "  const b = Math.random() * 255;",
+                            "  domElement.style.background = `rgb(${r}, ${g}, ${b})`;",
+                            "}",
+                            "const resources = { ",
+                            "  toggleHiddenElement, ",
+                            "  changeToFunkyColor",
+                            "}",
+                            "export default resources;"
+                        ]
+                    },
+                    {
+                        "title": "Importing default values",
+                        "text": [
+                            "The syntax for importing default exports looks like this:"
+                        ],
+                        "code": [
+                            "import domFunctions from '../modules/dom-functions.js';",
+                            "const { toggleHiddenElement, changeToFunkyColor } = domFunctions;",
+                            "const buttonElement = document.getElementById('secret-button');",
+                            "const pElement = document.getElementById('secret-p');",
+                            "buttonElement.addEventListener('click', () => {",
+                            "  toggleHiddenElement(pElement);",
+                            "  changeToFunkyColor(buttonElement);",
+                            "});"
+                        ]
+                    },
+                    {
+                        "title": "Javacript modules MSN Documentation",
+                        "text": [
+                            [["link"], ["https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules"]],
+                        ]
+                    },
+                    {
+                        "title": "CORS Issues",
+                        "text": [
+                            [["link"], ["https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"]],
+                        ]
+                    },
+                    {
+                        "title": "Creating local server with VSCode and the Live Server Extension",
+                        "text": [
+                            [["link"], ["https://www.codecademy.com/article/spinning-up-a-local-server"]]
                         ]
                     }
                 ]

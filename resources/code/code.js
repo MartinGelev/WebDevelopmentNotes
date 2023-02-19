@@ -99,6 +99,16 @@ function createContent(parentElement, data, level) {
                             list.appendChild(row)
                         }
                     }
+                    else if (text[0][0] === "img") {
+                        list = document.createElement("img")
+                        list.setAttribute("src", text[1][0])
+                    }
+                    else if (text[0][0] === "link") {
+                        list = document.createElement("a")
+                        list.setAttribute("href", text[1][0])
+                        list.setAttribute("target", "_blank")
+                        list.innerHTML = text[1][0]
+                    }
                     else {
                         list = document.createElement("ul")
                         for (let i = 0; i < text.length; i++) {
