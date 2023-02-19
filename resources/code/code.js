@@ -1,4 +1,4 @@
-import data from '.content.js';
+import data from './content.js';
 
 let counterLink = 1
 function createNav(parentElement, data, level) {
