@@ -242,6 +242,7 @@ section {
     padding: 1rem;
     background-color: #301E67;
     color: white;
+    z-index: 5;
 }
 
 
