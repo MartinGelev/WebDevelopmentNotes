@@ -4274,6 +4274,273 @@ let data = [
                 ]
             }
         ]
+    },
+    {
+        "title": "JavaScript Testing",
+        "content": [
+            {
+                "title": "Write Good Tests witch Mocha",
+                "content": [
+                    {
+                        "title": "initials Node.js Folder for managing packages for installing Mocha 1",
+                        "text": [
+                            "A JavaScript project is a directory of files. The following command creates a file package.json that can be used to manage packages for the project.",
+                            "With your project setup, you can install packages.",
+                            "npm install tells npm to install a package from the internet and any other packages it depends on mocha is the package you want to download",
+                            "-D signifies that this package is a development dependency and will show up under the devDependecies section in package.json. This means that the package will only be included in development mode and will not be included in the production bundle."
+                        ],
+                        "code": [
+                            "$ npm init",
+                            "npm install mocha -D"
+                        ]
+
+                    },
+                    {
+                        "title": "new folders in the project",
+                        "text": [
+                            "Once you npm install packages, you can find the packages and all their dependencies in the node_modules folder. The ... in the file structure represents other packages that are a dependency for Mocha.",
+                        ]
+
+                    },
+                    {
+                        "title": "run mocha",
+                        "text": [
+                            "add a script to package.json. In the scripts object in package.json, set the value of 'test' to mocha. It should look like this:",
+                            [["img"], ["../resources/images/Mocha_Javacript.PNG"]],
+                            "Now you can call Mocha with the following command:",
+                            [["img"], ["../resources/images/mocha_start.PNG"]]
+                        ]
+                    },
+                    {
+                        "title": "before() Hooks",
+                        "text": [
+                            "In a test file, the function before() will be executed first, regardless of it’s placement in the code block. before() is often used to set up code, like variables and values, for other function calls to use in their execution."
+                        ],
+                        "code": [
+                            "before(() => {",
+                            "   path = './message.txt';",
+                            " });"
+                        ]
+                    },
+                    {
+                        "title": "beforeEach() Hooks",
+                        "text": [
+                            "In a test file, the function beforeEach() will be executed before each test. beforeEach() is often used to set up or reset code, like variables and values, for other function calls to use in their execution."
+                        ],
+                        "code": [
+                            "beforeEach(() => {",
+                            "   testCounter++;",
+                            " });"
+                        ]
+                    },
+                    {
+                        "title": "after() Hooks",
+                        "text": [
+                            "In a test file, the function after() will be executed last, regardless of its placement in the code block. after() is often used to print out results from the tests that were run in the suite or to reset variables and values.",
+                        ],
+                        "code": [
+                            "after(() => {",
+                            '   console.log(""number of tests: "" + testCounter);',
+                            "})"
+                        ]
+                    },
+                    {
+                        "title": "afterEach() Hooks",
+                        "text": [
+                            "In a test file, the function afterEach() will be executed after each test. afterEach() is often used to print out results from a particular test that was run in the suite or to reset variables and values."
+                        ],
+                        "code": [
+                            "afterEach(() => {",
+                            "   path = './message.txt';",
+                            "});"
+                        ]
+                    },
+                    {
+                        "title": "Test Frameworks",
+                        "text": [
+                            "Test frameworks are used to organize and automate tests that provide useful feedback when errors occur."
+                        ]
+                    },
+                    {
+                        "title": "describe() functions",
+                        "text": [
+                            "In Mocha, the describe() function is used to group tests. It accepts a string to describe the group of tests and a callback function which contains it() tests. Calls to describe() are commonly nested to resemble the structure of the code being tested."
+                        ],
+                        "code": [
+                            "describe('group of tests', () => {",
+                            "  //Write it functions here",
+                            "});"
+                        ]
+                    },
+                    {
+                        "title": "it() functions",
+                        "text": [
+                            "In Mocha, the it() function is used to execute individual tests. It accepts a string to describe the test and a callback function to execute assertions. Calls to it() are commonly nested within describe() blocks."
+                        ],
+                        "code": [
+                            "describe('+', () => {",
+                            "  it('returns the sum of its arguments', () => {",
+                            "    // Write assertions here",
+                            "  });",
+                            "});"
+                        ]
+                    },
+                    {
+                        "title": "The assert Library",
+                        "text": [
+                            "The assert library is used to make assertions. It contains numerous functions that enable the tester to write easily readable assertions and throw AssertionErrors within a test."
+                        ],
+                        "code": [
+                            "describe('+', () => {",
+                            "  it('returns the sum of its arguments', () => {",
+                            "    // Write assertion here",
+                            "    assert.ok(3 + 4 === 7)",
+                            "  });",
+                            "});"
+                        ]
+                    },
+                    {
+                        "title": "assert.ok()",
+                        "text": [
+                            "The assert.ok() function is be used to evaluate a boolean expression within a test. If the expression evaluates to false, an AssertionError is thrown."
+                        ],
+                        "code": [
+                            "describe('+', () => {",
+                            "  it('returns the sum of its arguments', () => {",
+                            "    // Write assertion here",
+                            "    assert.ok(3 + 4 === 7)",
+                            "  });",
+                            "});"
+                        ]
+                    },
+                    {
+                        "title": "Setup Phase",
+                        "text": [
+                            "In testing, the Setup phase is where objects, variables, and set conditions that tests depend on are created."
+                        ],
+                        "code": [
+                            "describe('.pop', () => {",
+                            "  it('returns the last element in the array [3phase]', () => {",
+                            "    // Setup",
+                            "    const knightString = 'knight';",
+                            "    const jediPath = ['padawan', knightString];",
+                            "    // Exercise",
+                            "    const popped = jediPath.pop();",
+                            "    // Verify",
+                            "    assert.ok(popped === knightString);",
+                            "  });",
+                            "});"
+                        ]
+                    },
+                    {
+                        "title": "Exercise Phase",
+                        "text": [
+                            "In testing, the Exercise phase is where the functionality under test is executed."
+                        ],
+                        "code": [
+                            "describe('.pop', () => {",
+                            "  it('returns the last element in the array [3phase]', () => {",
+                            "    // Setup",
+                            "    const knightString = 'knight';",
+                            "    const jediPath = ['padawan', knightString];",
+                            "    // Exercise",
+                            "    const popped = jediPath.pop();",
+                            "    // Verify",
+                            "    assert.ok(popped === knightString);",
+                            "  });",
+                            "});"
+                        ]
+                    },
+                    {
+                        "title": "Verify Phase",
+                        "text": [
+                            "In testing, the Verify phase is where expectations are checked against the result of the exercise phase. assert would be used here."
+                        ],
+                        "code": [
+                            "describe('.pop', () => {",
+                            "  it('returns the last element in the array [3phase]', () => {",
+                            "    // Setup",
+                            "    const knightString = 'knight';",
+                            "    const jediPath = ['padawan', knightString];",
+                            "    // Exercise",
+                            "    const popped = jediPath.pop();",
+                            "    // Verify",
+                            "    assert.ok(popped === knightString);",
+                            "  });",
+                            "});"
+                        ]
+                    },
+                    {
+                        "title": "Teardown Phase",
+                        "text": [
+                            "In testing, the Teardown phase is where the environment is reset before the next test runs. The teardown phase ensures that a test is isolated from other tests."
+                        ],
+                        "code": [
+                            "it('creates a new file with a string of text', () => {",
+                            "   // Setup",
+                            "   path = './message.txt';",
+                            "   str = '';",
+                            "   // Exercise: write to file",
+                            "   fs.appendFileSync(path, str);",
+                            "   // Verify: compare file contents to string",
+                            "   const contents = fs.readFileSync(path);",
+                            "   assert.equal(contents.toString(), str);",
+                            "   // Teardown: restore file",
+                            "   fs.unlinkSync(path);",
+                            " });"
+                        ]
+                    },
+                    {
+                        "title": "Tests in Isolation",
+                        "text": [
+                            "A project’s tests should run in isolation from one another. One test shouldn’t affect another. Tests should be able to run in any order."
+                        ]
+                    },
+                    {
+                        "title": "assert.equal()",
+                        "text": [
+                            "assert.equal() verifies a loose equality (==) comparison. Using assert.equal() is more expressive, it’s more clear that it’s verifying equality than assert.ok()."
+                        ],
+                        "code": [
+                            "const landAnimals = ['giraffe', 'squirrel'];",
+                            "const waterAnimals = ['shark', 'stingray'];",
+                            "landAnimals.push('frog');",
+                            "waterAnimals.push('frog');",
+                            "assert.equal(landAnimals[2], waterAnimals[2]);"
+                        ]
+                    },
+                    {
+                        "title": "assert.strictEqual()",
+                        "text": [
+                            "assert.strictEqual() verifies a strict equality (===) comparison."
+                        ],
+                        "code": [
+                            "const a = 3;",
+                            "const b = '3';",
+                            "assert.equal(a, b);",
+                            "assert.strictEqual(a, b);"
+                        ]
+                    },
+                    {
+                        "title": "assert.deepEqual()",
+                        "text": [
+                            "assert.deepEqual() compares values within two objects. It will compare the values using loose (==) equality."
+                        ],
+                        "code": [
+                            "const a = { relation: 'twin', age: '17' }; ",
+                            "const b = {relation: 'twin', age: '17'};",
+                            "assert.strictEqual(a, b);"
+                        ]
+                    },
+                    {
+                        "title": "Why Test?",
+                        "text": [
+                            "Testing can catch and identify issues with your implementation code before you deploy it to users"
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ]
 
