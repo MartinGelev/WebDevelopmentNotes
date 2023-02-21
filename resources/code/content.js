@@ -4312,6 +4312,15 @@ let data = [
                         ]
                     },
                     {
+                        "title": "importing assert",
+                        "text": [
+                            "As a Node module, assert can be imported at the top of your files with"
+                        ],
+                        "code": [
+                            "const assert = require('assert');"
+                        ]
+                    },
+                    {
                         "title": "before() Hooks",
                         "text": [
                             "In a test file, the function before() will be executed first, regardless of it’s placement in the code block. before() is often used to set up code, like variables and values, for other function calls to use in their execution."
@@ -4536,6 +4545,30 @@ let data = [
                         "title": "Why Test?",
                         "text": [
                             "Testing can catch and identify issues with your implementation code before you deploy it to users"
+                        ]
+                    },
+                    {
+                        "title": "asertion documentation",
+                        "text": [
+                            [["link"], ["https://nodejs.org/api/assert.html"]]
+                        ]
+                    },
+                    {
+                        "title": "documentaion mocha",
+                        "text": [
+                            [["link"], ["https://mochajs.org/#getting-started"]]
+                        ]
+                    },
+                    {
+                        "title": "TDD With Mocha Project: Factorial Feature",
+                        "text": [
+                            [["link"], ["https://www.youtube.com/watch?v=NwSyopaJsUY&t=25s"]]
+                        ]
+                    },
+                    {
+                        "title": "Chai Assertion Library",
+                        "text": [
+                            [["link"], ["https://www.chaijs.com/guide/"]]
                         ]
                     }
                 ]
